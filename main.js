@@ -36,6 +36,17 @@ function displayResults(weather){
     let now = new Date();
     let data = document.querySelector('.location .date');
     data.innerText = dateFunction(now);
+
+    let temp = document.querySelector('.temp');
+    temp.innerHTML = parseInt(`${(weather.main.temp)}`) + `<span>&#8457</span>`;
+
+    let loc = document.querySelector('.weather-condition');
+    loc.innerText = weather.weather[0].main;
+    
+    let minMax = document.querySelector('.hi_low');
+    minMax.innerHTML = parseInt(`${weather.main.temp_min}`) + `<span>&#8457</span>` + ' / ' + parseInt(`${weather.main.temp_max}`) + `<span>&#8457</span>`;
+
+
 }
 
 function dateFunction(currentDate){
